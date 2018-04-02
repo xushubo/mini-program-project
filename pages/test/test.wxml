@@ -1,0 +1,2 @@
+<view>test页面</view>
+<view>{{name}}</view>

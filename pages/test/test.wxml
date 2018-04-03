@@ -4,3 +4,10 @@
 <button bindtap='toIndex'>跳转到首页</button>
 <button bindtap='toNavi'>跳转到navi页</button>
 <navigator hover-class="active"url="../navi/navi">跳转到navi页面</navigator>
+<button bindtap='say'>say hello!</button>
+<view id="item-{{id}}">内容</view>
+<button bindtap="show">显示隐藏</button>
+<view wx:if="{{condition}}">条件渲染显示</view>
+<view wx:if="{{id==1}}">第一条</view>
+<view wx:elif="{{id>1}}">第二条</view>
+<view wx:else>第三条</view>

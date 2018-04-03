@@ -11,14 +11,6 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      },
-      //小程序显示的时候触发
-      onShow:function(){
-        console.log("声明周期函数-监听小程序显示的时候触发");
-      },
-      //小程序隐藏的时候触发
-      onHide:function(){
-        console.log("声明周期函数-监听小程序隐藏的时候触发")
       }
     })
     // 获取用户信息
@@ -42,8 +34,17 @@ App({
       }
     })
   },
+  //小程序显示的时候触发
+  onShow: function () {
+    console.log("声明周期函数-监听小程序显示的时候触发");
+  },
+  //小程序隐藏的时候触发
+  onHide: function () {
+    console.log("声明周期函数-监听小程序隐藏的时候触发")
+  },
   //全局的属性
   globalData: {
-    userInfo: null
+    userInfo: null,
+    pass: "1234567"
   }
 })

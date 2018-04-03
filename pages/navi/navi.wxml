@@ -1,0 +1,2 @@
+<view>navi.wxml页面</view>
+<button bindtap='back'>返回</button>

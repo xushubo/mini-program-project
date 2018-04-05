@@ -6,7 +6,12 @@ Page({
     name: "xushubo",
     pass: null,
     id: 0,
-    condition: true
+    condition: true,
+    arr: [1, 2, 3, 4, 5],
+    obj1: {
+      a: 3,
+      b: 4
+    }
   },
   show: function () {
     //var condition = this.data.condition;

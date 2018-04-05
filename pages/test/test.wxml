@@ -11,3 +11,41 @@
 <view wx:if="{{id==1}}">第一条</view>
 <view wx:elif="{{id>1}}">第二条</view>
 <view wx:else>第三条</view>
+
+<block wx:if="{{true}}">
+    <view>第一个view</view>
+    <view>第二个view</view>
+</block>
+
+<!-- 在view上是比生效的，只能在文本属性生效 -->
+<text hidden="{{true}}">我是一段文本</text>
+
+<view>{{condition?"正":"反"}}</view>
+<view>{{3+id}}</view>
+<view>{{"Hello "+"name"}}</view>
+<view wx:for="{{arr}}">下标：{{index}}，项目：{{item}}</view>
+<view wx:for="{{arr}}" wx:for-index="key" wx:for-item="value">下标：{{key}}，项目：{{value}}</view>
+<view wx:for="{{[5, 4, 3, 2, 1, id]}}">{{item}}</view>
+<!--定义一个模板-->
+<template name="object">
+    <view>第一个对象：{{a}}</view>
+    <view>第二个对象：{{b}}</view>
+    <view>{{tempname}}</view>
+</template>
+<!--使用模板-->
+<template is="object" data="{{a: 1, b: 2, tempname: name}}"></template>
+
+<template is="object" data="{{...obj1, tempname: name}}"></template>
+
+<template name="object1">
+    <view>{{name}}</view>
+</template>
+<template is="object1" data="{{name}}"></template>
+
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+     <view style='display:inline-block; width:60px;' wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+          <view wx:if="{{j <= i}}">
+              {{i}}*{{j}}={{i*j}}
+          </view>
+     </view>
+</view>

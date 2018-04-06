@@ -10,3 +10,11 @@
     <view id='f' class='f'>f</view>
 </scroll-view>
 <button bindtap='tapChange'>切换</button>
+
+<swiper indicator-dots='true' autoplay='{{autoplay}}' interval='{{inter}}' duration='1000' current='2' bindchange='swiperChange'>
+    <swiper-item wx:for='{{imgUrls}}'>
+        <image src='{{item}}' />
+    </swiper-item>
+</swiper>
+<slider bindchange='intervalChange' show-value min='2000' max='5000' />
+<button bindtap='changeAutoplay'>切换自动播放</button>

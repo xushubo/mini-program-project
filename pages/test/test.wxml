@@ -49,3 +49,36 @@
           </view>
      </view>
 </view>
+
+<!-- 冒泡事件 -->
+<view id="outter" style='border:1px solid red' bindtap='outterTap'>
+    outter view
+    <view id="middle" style='border:1px solid green' bindtap='middleTap'>
+        middle view
+        <view id="inner" style='border:1px solid blue' bindtap='innerTap'>
+            inner view
+        </view>
+    </view>
+</view>
+
+<!-- 非冒泡事件 -->
+<view id="outter" style='border:1px solid red' bindtap='outterTap'>
+    outter view
+    <view id="middle" style='border:1px solid green' catchtap='middleTap'>
+        middle view
+        <view id="inner" style='border:1px solid blue' data-src="一些路径" bindtap='innerTap'>
+            inner view
+        </view>
+    </view>
+</view>
+
+<view id="inner" style='border:1px solid blue' bindtouchmove='innerTap'>
+    inner view
+</view>
+
+<!-- 引入-import -->
+<import src='item.wxml' />
+<template is="item" data="{{name:'xushubo'}}" />
+
+<!-- 引入-include -->
+<include src='item.wxml'/>

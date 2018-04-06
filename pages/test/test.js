@@ -42,5 +42,17 @@ Page({
         console.log("跳转到navi页面成功");
       }
     })
+  },
+  innerTap: function(event) {
+    console.log(event);
+    console.log("触发了inner的tap事件");
+  },
+  middleTap: function(event) {
+    console.log(event);
+    console.log("触发了middle的tap事件");
+  },
+  outterTap: function(event) {
+    console.log(event);
+    console.log("触发了outter的tap事件");
   }
 })

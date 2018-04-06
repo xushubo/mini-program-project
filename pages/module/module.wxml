@@ -1,0 +1,12 @@
+<view class='flex-wrap'>
+    <view class='a'>a</view>
+    <view class='b'>b</view>
+    <view class='c'>c</view>
+</view>
+
+<scroll-view class='wrap' scroll-y='true' scroll-x='true' bindscrolltoupper='scrolltoupper' upper-threshold='100' bindscrolltolower='scrolltolower' scroll-into-view='{{toView}}' bindscroll='scroll'>
+    <view id='d' class='d'>d</view>
+    <view id='e' class='e'>e</view>
+    <view id='f' class='f'>f</view>
+</scroll-view>
+<button bindtap='tapChange'>切换</button>

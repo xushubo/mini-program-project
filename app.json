@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/test/test",
-    "pages/navi/navi"
+    "pages/navi/navi",
+    "pages/module/module"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,7 +21,7 @@
       "iconPath": "images/tab1.jpg",
       "selectedIconPath": "images/tab2.jpg"
     },{
-      "pagePath": "pages/test/test",
+      "pagePath": "pages/module/module",
       "text": "测试页",
       "iconPath": "images/tab1.jpg",
       "selectedIconPath": "images/tab2.jpg"

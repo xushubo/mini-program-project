@@ -3,7 +3,7 @@
 <view>密码是：{{pass}}</view>
 <button bindtap='toIndex'>跳转到首页</button>
 <button bindtap='toNavi'>跳转到navi页</button>
-<navigator hover-class="active"url="../navi/navi">跳转到navi页面</navigator>
+<navigator hover-class="active" url="../navi/navi">跳转到navi页面</navigator>
 <button bindtap='say'>say hello!</button>
 <view id="item-{{id}}">内容</view>
 <button bindtap="show">显示隐藏</button>
@@ -82,3 +82,5 @@
 
 <!-- 引入-include -->
 <include src='item.wxml'/>
+
+<view class='rpx'></view>

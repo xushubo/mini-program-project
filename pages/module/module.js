@@ -27,7 +27,11 @@ Page({
       { name: 'JPN', value: '日本' },
       { name: 'ENG', value: '英国' },
       { name: 'TUR', value: '法国' },
-    ]
+    ],
+    citys: ['北京', '上海', '广州', '深圳'],
+    index: 0,
+    time: '09:01',
+    date: '2000-01-01'
   },
 
   /**
@@ -152,5 +156,32 @@ Page({
   },
   blurFn: function (event) {
     console.log(event)
+  },
+  bindPickerChangeCity: function (event) {
+    this.setData({ 
+      index: event.detail.value
+    })
+  },
+  bindPickerChangeTime: function (event) {
+    this.setData({
+      time: event.detail.value
+    })
+  },
+  bindPickerChangeDate: function (event) {
+    this.setData({
+      date: event.detail.value
+    })
+  },
+  bindRadioChange: function (event) {
+    console.log(event.detail.value)
+  },
+  bindSliderChange: function (event) {
+    console.log(event.detail.value)
+  },
+  bindSwitchChange: function (event) {
+    console.log(event.detail.value)
+  },
+  bindLineChange: function (event) {
+    console.log(event.detail)
   }
 })

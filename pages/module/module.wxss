@@ -45,3 +45,14 @@
   color: green;
   font-size: 30rpx;
 }
+.section_title{
+  background-color: #ccc;
+}
+.text{
+  border: 2rpx solid rebeccapurple;
+  color: skyblue;
+  height: 200rpx;
+}
+.textarea_placeholder{
+  color: blue;
+}

@@ -1,5 +1,6 @@
 var order = ["d", "e", "f"];
 var index = 0;
+var progressNum = 0;
 Page({
 
   /**
@@ -13,14 +14,36 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
     inter: 2000,
-    autoplay: true
+    autoplay: true,
+    iconType: [
+      'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
+    ],
+    progress: 0,
+    disabledBol: true,
+    country: [
+      { name: 'USA', value: '美国' },
+      { name: 'CHN', value: '中国', checked: 'true' },
+      { name: 'BRA', value: '巴西' },
+      { name: 'JPN', value: '日本' },
+      { name: 'ENG', value: '英国' },
+      { name: 'TUR', value: '法国' },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    var timer = setInterval(function () {
+      progressNum ++;
+      if (progressNum >= 100){
+        clearInterval(timer);
+      }
+      that.setData({
+        progress: progressNum
+      });
+    }, 30);
   },
 
   /**
@@ -106,5 +129,28 @@ Page({
     this.setData({
       autoplay: !this.data.autoplay
     })
+  },
+  ableChange: function () {
+    this.setData({
+      disabledBol: !this.data.disabledBol
+    })
+  },
+  subFn: function (event) {
+    console.log('提交表单', event.detail.value)
+  },
+  resetFn: function (event) {
+    console.log('点击重置了')
+  },
+  checkChange: function (event) {
+    console.log(event.detail.value)
+  },
+  inputFn: function (event) {
+    console.log(event.detail.value)
+  },
+  focusFn: function (event) {
+    console.log(event)
+  },
+  blurFn: function (event) {
+    console.log(event)
   }
 })

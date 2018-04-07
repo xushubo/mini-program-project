@@ -18,3 +18,35 @@
 </swiper>
 <slider bindchange='intervalChange' show-value min='2000' max='5000' />
 <button bindtap='changeAutoplay'>切换自动播放</button>
+
+<icon type='success' size='50' color='blue' />
+<view wx:for='{{iconType}}'>
+    <icon type='{{item}}' size='40' />
+</view>
+
+<view>
+    <block wx:for='{{iconType}}'>
+        <icon type='{{item}}' size='40' />
+    </block>
+</view>
+
+<view>我是一段文字，但不可复制</view>
+<text selectable='true'>我是一段文件，可以复制</text>
+
+<progress percent='50' show-info='true' stroke-width='20' color='blue'  active='true' />
+
+<progress percent='{{progress}}' show-info='true' stroke-width='20'/>
+
+<form bindsubmit='subFn' bindreset='resetFn'>
+    <input type='text' name='txtName' placeholder='请输入11位手机号码' placeholder-class='outher-placeholder' auto-focus maxlength='13' bindinput='inputFn' bindfocus='focusFn' bindblur='blurFn' />
+    <checkbox-group bindchange='checkChange' >
+        <label wx:for='{{country}}'>
+            <checkbox value='{{item.name}}' checked='{{item.checked}}' />{{item.value}}
+        </label>    
+    </checkbox-group>
+    <input type='number' password='true' />
+    <button size='mini' type='warn' plain='true' disabled='{{disabledBol}}' hover-class='other-button-hover' form-type='submit'>按钮</button>
+    <button size='mini' form-type='reset'>重置</button>
+</form>
+
+<button bindtap='ableChange' loading>点击生效</button>

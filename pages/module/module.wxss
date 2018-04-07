@@ -38,3 +38,10 @@
 .f{
   background-color: blue;
 }
+.other-button-hover{
+  opacity: 0.2;
+}
+.outher-placeholder{
+  color: green;
+  font-size: 30rpx;
+}

@@ -183,5 +183,38 @@ Page({
   },
   bindLineChange: function (event) {
     console.log(event.detail)
+  },
+  showAction: function () {
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      itemColor: 'red',
+      success: function (res) {
+        if (!res.cancel) {
+          console.log(res.tapIndex)
+        }
+      }
+    })
+  },
+  showModal: function () {
+    wx.showModal({
+      title: '提示',
+      content: '我是一个模态弹窗',
+      cancelText: '点我取消',
+      confirmText: '点我确定',
+      showCancel: false,
+      success: function (res) {
+        console.log(res);
+      }
+    })
+  },
+  showToast: function () {
+    wx.showToast({
+      title: '删除成功',
+      icon: 'success',
+      duration: 3000,
+      success: function () {
+        console.log('显示消息框成功！');
+      }
+    })
   }
 })

@@ -1,6 +1,9 @@
 var order = ["d", "e", "f"];
 var index = 0;
 var progressNum = 0;
+//用于返回豆瓣前250名的电影
+var api = 'https://api.douban.com/v2/movie/top250';
+
 Page({
 
   /**
@@ -211,10 +214,13 @@ Page({
     wx.showToast({
       title: '删除成功',
       icon: 'success',
-      duration: 3000,
+      duration: 10000,
       success: function () {
         console.log('显示消息框成功！');
       }
-    })
+    });
+    setTimeout(function () {
+      wx.hideToast();
+    }, 2000)
   }
 })

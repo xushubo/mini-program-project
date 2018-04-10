@@ -1,3 +1,4 @@
+<button bindtap='navigateBack'>后退</button>
 <view>test页面</view>
 <view>{{name}}</view>
 <view>密码是：{{pass}}</view>

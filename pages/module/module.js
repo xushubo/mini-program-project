@@ -2,7 +2,7 @@ var order = ["d", "e", "f"];
 var index = 0;
 var progressNum = 0;
 //用于返回豆瓣前250名的电影
-var api = 'https://api.douban.com/v2/movie/top250';
+var api = 'http://t.yushu.im/v2/movie/top250';
 
 Page({
 
@@ -219,8 +219,21 @@ Page({
         console.log('显示消息框成功！');
       }
     });
-    setTimeout(function () {
-      wx.hideToast();
-    }, 2000)
+    wx.request({
+      url: api, //仅为示例，并非真实的接口地址
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+        wx.hideToast();
+      }
+    })
+  },
+  navigateTo: function (event) {
+    wx.navigateTo({
+      url: '../test/test?id=54321&user=xushubo',
+    })
   }
 })

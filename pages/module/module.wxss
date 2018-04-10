@@ -56,3 +56,6 @@
 .textarea_placeholder{
   color: blue;
 }
+.nav_hover{
+  color:aquamarine;
+}

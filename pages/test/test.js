@@ -23,6 +23,7 @@ Page({
     common.sayHello(this.data.name);
   },
   onLoad:function(options){
+    console.log(options);
     this.setData({
       pass: app.globalData.pass
     });
@@ -54,5 +55,10 @@ Page({
   outterTap: function(event) {
     console.log(event);
     console.log("触发了outter的tap事件");
+  },
+  navigateBack: function () {
+    wx.navigateBack({
+      delta: 2
+    });
   }
 })

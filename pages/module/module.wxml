@@ -90,4 +90,4 @@
 <button bindtap='getPos'>获取我的位置</button>
 
 <!-- canvas -->
-<canvas style='width: 750rpx; height:300rpx; background-color: #ccc' canvas-id='firstCanvas'></canvas>
+<canvas style='width: 750rpx; height:300rpx; background-color: #ccc' canvas-id='firstCanvas' bindtouchstart='touchstartFn' bindtouchmove='touchmoveFn'></canvas>

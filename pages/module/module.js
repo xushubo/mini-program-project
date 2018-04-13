@@ -3,6 +3,7 @@ var index = 0;
 var progressNum = 0;
 //用于返回豆瓣前250名的电影
 var api = 'http://t.yushu.im/v2/movie/top250';
+var rectX = 0;
 
 Page({
 
@@ -72,12 +73,20 @@ Page({
       });
     }, 30);
   },
+  touchstartFn: function (event) {
+    console.log(event)
+  },
+  touchmoveFn: function (event) {
+    console.log(event)
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     var context = wx.createContext('firstCanvas');
+    var frameNum = 0;
+    /*
     context.setStrokeStyle('#00ff00');
     context.rect(0, 0, 200, 100);
     context.stroke();
@@ -85,6 +94,32 @@ Page({
       canvasId: 'firstCanvas',
       actions: context.getActions()
     });
+    */
+    function draw () {
+      context.setStrokeStyle('#00ff00');
+      context.rect(rectX, 20, 50, 50);
+      context.stroke();
+      context.fill();
+      wx.drawCanvas({
+        canvasId: 'firstCanvas',
+        actions: context.getActions()
+      });
+    }
+    function animation () {
+      frameNum ++;
+      if (frameNum % 4 == 0) {
+        rectX++;
+        if (rectX > 200) {
+          return;
+        }
+        draw();
+      }
+      if (frameNum > 10000) {
+        frameNum = 0;
+      }
+      requestAnimationFrame(animation);
+    }
+    animation();
   },
 
   /**

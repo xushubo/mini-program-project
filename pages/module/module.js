@@ -34,7 +34,27 @@ Page({
     citys: ['北京', '上海', '广州', '深圳'],
     index: 0,
     time: '09:01',
-    date: '2000-01-01'
+    date: '2000-01-01',
+    imageSrc: '../../images/2018-04-11 223833.jpg',
+    danmuList: [
+      {
+        text: '第 1s 出现的弹幕',
+        color: '#ff0000',
+        time: 1
+      },
+      {
+        text: '第 3s 出现的弹幕',
+        color: '#ff00ff',
+        time: 3
+      }],
+    markers: [{
+      title: '万科东荟城南门',
+      id: 0,
+      latitude: 23.155670,
+      longitude: 113.505720,
+      width: 50,
+      height: 50
+    }]
   },
 
   /**
@@ -57,7 +77,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    var context = wx.createContext('firstCanvas');
+    context.setStrokeStyle('#00ff00');
+    context.rect(0, 0, 200, 100);
+    context.stroke();
+    wx.drawCanvas({
+      canvasId: 'firstCanvas',
+      actions: context.getActions()
+    });
   },
 
   /**
@@ -234,6 +261,23 @@ Page({
   navigateTo: function (event) {
     wx.navigateTo({
       url: '../test/test?id=54321&user=xushubo',
+    })
+  },
+  getPos: function () {
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        console.log(res);
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        wx.openLocation({
+          latitude: latitude,
+          longitude: longitude,
+          scale: 28
+        })
+      }
     })
   }
 })

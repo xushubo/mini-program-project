@@ -12,3 +12,7 @@
     <button bindtap="changeMotto">点击</button>
   </view>
 </view>
+<audio id='myAudio' src='{{src}}' poster='{{poster}}' name='{{name}}' author='{{author}}' controls></audio>
+<button bindtap='audioPlay'>播放</button>
+<button bindtap='audioPause'>暂停</button>
+<button bindtap='audio50'>设置当前播放时间为50秒</button>
